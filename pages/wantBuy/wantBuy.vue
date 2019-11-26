@@ -5,20 +5,11 @@
 </template>
 
 <script>
-	import api from "../../public/httpd.js"
 	export default {
 		data() {
 			return {
 				
 			}
-		},
-		onLoad() {
-			api.logon({
-				token:1,
-				fhahf:111
-			}).then(res => {
-				console.log(res);
-			});
 		},
 		methods: {
 			

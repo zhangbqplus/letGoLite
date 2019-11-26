@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/wantBuy/wantBuy"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#f7f7f7"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#fc6700",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBar/indexG.jpg",
+        "selectedIconPath": "static/tabBar/index.jpg",
+        "text": "市场"
+      },
+      {
+        "pagePath": "pages/wantBuy/wantBuy",
+        "iconPath": "static/tabBar/wantBuyG.jpg",
+        "selectedIconPath": "static/tabBar/wantBuy.jpg",
+        "text": "求购"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabBar/myG.jpg",
+        "selectedIconPath": "static/tabBar/my.jpg",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

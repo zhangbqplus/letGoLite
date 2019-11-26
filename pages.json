@@ -1,16 +1,47 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
+            "path" : "pages/index/index",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/wantBuy/wantBuy",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#f7f7f7"
+	},
+	"tabBar": {	
+		"color": "#999999",
+		"selectedColor": "#fc6700",
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"list": [
+			{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/tabBar/indexG.jpg",
+			"selectedIconPath": "static/tabBar/index.jpg",
+			"text": "市场"
+			},
+			{
+			"pagePath": "pages/wantBuy/wantBuy",
+			"iconPath": "static/tabBar/wantBuyG.jpg",
+			"selectedIconPath": "static/tabBar/wantBuy.jpg",
+			"text": "求购"
+			},
+			{
+			"pagePath": "pages/my/my",
+			"iconPath": "static/tabBar/myG.jpg",
+			"selectedIconPath": "static/tabBar/my.jpg",
+			"text": "我的"
+			}
+		]
 	}
 }
