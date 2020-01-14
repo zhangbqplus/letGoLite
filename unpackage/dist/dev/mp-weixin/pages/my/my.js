@@ -126,14 +126,37 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
 var _httpd = _interopRequireDefault(__webpack_require__(/*! ../../public/httpd.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
 //
-var _default = { data: function data() {return {};
+//
+var cardTwo = function cardTwo() {return __webpack_require__.e(/*! import() | components/card_1 */ "components/card_1").then(__webpack_require__.bind(null, /*! ../../components/card_1.vue */ 48));};var _default = { data: function data() {return { dataList: [{
+        color: {
+          red: '',
+          green: '',
+          blue: '',
+          alpha: '' },
+        //背景颜色
+        tag: '', //标签
+        content: '', //内容
+        prices: '', //价格
+        number: '', //查看人数
+        comment: [//评论
+        {
+          src: '', //头像
+          content: '' //评论内容
+        }],
+
+        code: '' //识别码
+      }] };
+
+
   },
-  components: {},
+  components: {
+    cardTwo: cardTwo },
 
   methods: {} };exports.default = _default;
 
