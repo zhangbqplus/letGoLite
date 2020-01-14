@@ -2,15 +2,30 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
             "path" : "pages/index/index",
-            "style" : {}
+            "style": {
+                    "navigationBarTitleText": "市场",//设置页面标题文字
+					"enablePullDownRefresh":true,//开启下拉刷新
+					"backgroundColor":"#C8C7CC"
+            }
         }
         ,{
             "path" : "pages/my/my",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "我的",//设置页面标题文字
+				"enablePullDownRefresh":true//开启下拉刷新
+				// "navigationStyle":"custom"
+			}
         }
         ,{
             "path" : "pages/wantBuy/wantBuy",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "求购"//设置页面标题文字
+				// "enablePullDownRefresh":true//开启下拉刷新
+				// "navigationStyle":"custom",
+				// "app-plus":{
+				// 	"titleView":false
+				// }
+			}
         }
     ],
 	"globalStyle": {

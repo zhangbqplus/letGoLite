@@ -7,7 +7,7 @@
 		"urlCheck": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
+	"libVersion": "2.9.2",
 	"appid": "touristappid",
 	"projectname": "tiaozaoWeChatProgram",
 	"simulatorType": "wechat",

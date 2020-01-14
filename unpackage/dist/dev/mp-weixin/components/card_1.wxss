@@ -1,0 +1,53 @@
+
+.clear {
+	clear: both;
+	display: block;
+}
+.card_1_box {
+	margin-top: 30rpx;
+	border-radius: 20rpx;
+	overflow: hidden;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.card_1_img {
+	width: 100%;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+	max-height: 400rpx;
+}
+.card_1_des {
+	padding: 20rpx 0 30rpx;
+}
+.card_1_des_1 {
+	display: inline-block;
+	font-size: 24rpx;
+	color: #999999;
+	line-height: 30rpx;
+	width: 68%;
+	padding-left: 2%;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+	white-space: nowrap;
+	border-right: 1px solid #999;
+	float: left;
+}
+.card_1_des_2 {
+	display: inline-block;
+	font-size: 24rpx;
+	color: #999999;
+	line-height: 30rpx;
+	width: calc(26% - 2px);
+	padding-left: 4%;
+	float: right;
+}
+.card_1_des_2_pre {
+	font-size: 24rpx;
+	margin-right: 4rpx;
+}
+.card_1_des_2_pres {
+	font-size: 30rpx;
+	color: #ff6000;
+}
+
