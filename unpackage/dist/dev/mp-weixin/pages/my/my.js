@@ -133,24 +133,30 @@ var _httpd = _interopRequireDefault(__webpack_require__(/*! ../../public/httpd.j
 //
 //
 //
-var cardTwo = function cardTwo() {return __webpack_require__.e(/*! import() | components/card_1 */ "components/card_1").then(__webpack_require__.bind(null, /*! ../../components/card_1.vue */ 48));};var _default = { data: function data() {return { dataList: [{
+var cardTwo = function cardTwo() {return __webpack_require__.e(/*! import() | components/card_2 */ "components/card_2").then(__webpack_require__.bind(null, /*! ../../components/card_2.vue */ 59));};var _default = { data: function data() {return { dataList: [{
         color: {
-          red: '',
-          green: '',
-          blue: '',
-          alpha: '' },
+          red: 255,
+          green: 0,
+          blue: 0,
+          alpha: 1 },
         //背景颜色
-        tag: '', //标签
-        content: '', //内容
-        prices: '', //价格
-        number: '', //查看人数
+        wordsColor: '590101',
+        tag: '求购', //标签
+        content: '上的回房间哈防护等级粉红色的就和驾驶飞机的和大家哈佛', //内容
+        prices: '2000', //价格
+        number: '100', //查看人数
         comment: [//评论
         {
-          src: '', //头像
-          content: '' //评论内容
+          src: 'http://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&f=JPEG?w=1280&h=853', //头像
+          content: '发挥巨大的数据返回东京哈吉会觉得很舒服活动教案火箭发射' //评论内容
+        },
+        {
+          src: 'http://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&f=JPEG?w=1200&h=1290', //头像
+          content: '发挥巨大的数' //评论内容
         }],
 
-        code: '' //识别码
+
+        code: 1120 //识别码
       }] };
 
 

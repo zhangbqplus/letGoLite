@@ -1,1 +1,1 @@
-<view></view>
+<view class="page_index"><view class="content"><card-two vue-id="1" dataList="{{getDate}}" bind:__l="__l"></card-two><card-two vue-id="2" dataList="{{dataList}}" bind:__l="__l"></card-two></view></view>

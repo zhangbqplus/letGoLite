@@ -5,7 +5,7 @@
 }
 .card_1_box {
 	margin-top: 30rpx;
-	border-radius: 20rpx;
+	border-radius: 10rpx;
 	overflow: hidden;
 	width: 100%;
 	background-color: #FFFFFF;

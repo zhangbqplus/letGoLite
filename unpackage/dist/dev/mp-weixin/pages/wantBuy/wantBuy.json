@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "求购",
-  "usingComponents": {}
+  "usingComponents": {
+    "card-two": "/components/card_2"
+  }
 }

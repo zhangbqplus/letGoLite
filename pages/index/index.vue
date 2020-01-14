@@ -1,6 +1,5 @@
 <template>
 	<view class="page_index">
-		<!-- <headBar :name="'市场'"></headBar> -->
 		<view class="content">
 			<cardOne :dataList = 'getData' ></cardOne>
 			<cardOne :dataList = 'dataList' ></cardOne>

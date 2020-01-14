@@ -1,0 +1,65 @@
+
+.clear {
+	clear: both;
+	display: block;
+}
+.card_2_box {
+	margin-top: 30rpx;
+	border-radius: 10rpx;
+	overflow: hidden;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.card_2_content{
+	padding: 26rpx;
+}
+.card_2_content_content{
+	font-weight: 600;
+	font-size: 36rpx;
+	line-height: 46rpx;
+	text-align: justify;
+}
+.card_2_content_content_span{
+	font-size: 18rpx;
+	height: 32rpx;
+	line-height: 32rpx;
+	float: left;
+	padding: 0 10rpx;
+	margin-right: 10rpx;
+	margin-top: 4rpx;
+}
+.card_2_content_content_botton{
+	padding: 10rpx 0 0 0;
+	font-size: 30rpx;
+	font-weight: 400;
+}
+.card_2_des{
+	padding: 26rpx;
+}
+.card_2_des_1{
+	padding: 10rpx 0 20rpx;
+}
+.card_2_des_1 image{
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 25rpx;
+	float: left;
+}
+.card_2_des_2{
+	width: 440rpx;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	margin-top: 1rpx;
+	padding:0 30rpx;
+	margin-left: 40rpx;
+	background-color: #ECECEC;
+	border-bottom-right-radius: 10rpx;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+

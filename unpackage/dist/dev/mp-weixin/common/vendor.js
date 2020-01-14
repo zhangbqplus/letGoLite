@@ -8415,7 +8415,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "市场", "enablePullDownRefresh": true, "backgroundColor": "#C8C7CC" }, "pages/my/my": { "navigationBarTitleText": "我的", "enablePullDownRefresh": true }, "pages/wantBuy/wantBuy": { "navigationBarTitleText": "求购" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarBackgroundColor": "#fff", "backgroundColor": "#f7f7f7" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "市场", "enablePullDownRefresh": true, "backgroundColor": "#C8C7CC", "usingComponents": { "card-one": "/components/card_1", "head-bar": "/components/headBar" } }, "pages/my/my": { "navigationBarTitleText": "我的", "enablePullDownRefresh": true, "usingComponents": { "card-two": "/components/card_2" } }, "pages/wantBuy/wantBuy": { "navigationBarTitleText": "求购", "usingComponents": { "card-two": "/components/card_2" } } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarBackgroundColor": "#fff", "backgroundColor": "#f7f7f7" } };exports.default = _default;
 
 /***/ }),
 /* 8 */

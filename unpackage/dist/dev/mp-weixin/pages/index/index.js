@@ -141,7 +141,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
 var _httpd = _interopRequireDefault(__webpack_require__(/*! ../../public/httpd.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -151,8 +150,8 @@ var _httpd = _interopRequireDefault(__webpack_require__(/*! ../../public/httpd.j
 //
 //
 //
-//
-var headBar = function headBar() {return __webpack_require__.e(/*! import() | components/headBar */ "components/headBar").then(__webpack_require__.bind(null, /*! ../../components/headBar.vue */ 41));};var cardOne = function cardOne() {return __webpack_require__.e(/*! import() | components/card_1 */ "components/card_1").then(__webpack_require__.bind(null, /*! ../../components/card_1.vue */ 48));};var _default = { components: { cardOne: cardOne, headBar: headBar }, data: function data() {return { getData: {
+var headBar = function headBar() {return __webpack_require__.e(/*! import() | components/headBar */ "components/headBar").then(__webpack_require__.bind(null, /*! ../../components/headBar.vue */ 41));};var cardOne = function cardOne() {return __webpack_require__.e(/*! import() | components/card_1 */ "components/card_1").then(__webpack_require__.bind(null, /*! ../../components/card_1.vue */ 48));};var _default = { components: { cardOne: cardOne, headBar: headBar }, data: function data() {return {
+      getData: {
         img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578936199850&di=fa11378b0441e4ea2099cb2ab4c87821&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D2247852322%2C986532796%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853',
         describe: '价格优惠，限时抢购,价格优惠，限时抢购,价格优惠，限时抢购,价格优惠，限时抢购', //最大不超过12个字
         prices: '1000',
