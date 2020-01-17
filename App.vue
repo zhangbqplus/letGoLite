@@ -1,8 +1,9 @@
 <script>
+	var dataPro = require('./public/dataPro.js');
 	export default {
 		onLaunch: function() {
-			
 			console.log('App Launch')
+			dataPro.getSystemInfo();
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -12,7 +13,6 @@
 		}
 	}
 </script>
-
 <style>
 	/*每个页面公共css */
 </style>

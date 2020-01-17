@@ -11,16 +11,16 @@
         ,{
             "path" : "pages/my/my",
             "style" : {
-				"navigationBarTitleText": "我的",//设置页面标题文字
-				"enablePullDownRefresh":true//开启下拉刷新
-				// "navigationStyle":"custom"
+				// "navigationBarTitleText": "我的",//设置页面标题文字
+				// "enablePullDownRefresh":true//开启下拉刷新
+				"navigationStyle":"custom"
 			}
         }
         ,{
             "path" : "pages/wantBuy/wantBuy",
             "style" : {
-				"navigationBarTitleText": "求购"//设置页面标题文字
-				// "enablePullDownRefresh":true//开启下拉刷新
+				"navigationBarTitleText": "求购",//设置页面标题文字
+				"enablePullDownRefresh":true//开启下拉刷新
 				// "navigationStyle":"custom",
 				// "app-plus":{
 				// 	"titleView":false

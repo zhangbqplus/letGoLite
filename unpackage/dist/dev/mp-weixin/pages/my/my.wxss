@@ -1,0 +1,22 @@
+
+page{
+	background-color: #ececec;
+}
+.imageBackgroud{
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+.scroll_view{
+	position: fixed;
+	top: 0;
+	z-index: 11;
+}
+.user_data{
+	margin-top: 600rpx;
+	background-color: #FFFFFF;
+}
+

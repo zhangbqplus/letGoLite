@@ -1,53 +1,68 @@
 <template>
 	<view>
-		<cardTwo :dataList = 'dataList'></cardTwo>
+		<!-- <cardTwo :dataList = 'dataList'></cardTwo> -->
+		<view class="imageBackgroud">
+			<image :src="backgroundImg" :style="'width: 100%; height:' + height + 'px;'" mode="aspectFill"></image>
+		</view>
+		<scroll-view class="scroll_view" scroll-y="true" :style="'height:' + height + 'px;'">
+			<view class="user_data">
+				11111111
+			</view>
+		</scroll-view>
 	</view>
 </template>
 
 <script>
 	import api from "../../public/httpd.js";
 	import cardTwo from "../../components/card_2.vue";
+	import util from "../../public/util.js";
 	export default {
 		data() {
 			return {
-				dataList:[
-					{
-						color:{
-							red:255,
-							green:0,
-							blue:0,
-							alpha:1
-						},//背景颜色
-						wordsColor:'590101',
-						tag:'求购',//标签
-						content:'上的回房间哈防护等级粉红色的就和驾驶飞机的和大家哈佛',//内容
-						prices:'2000',//价格
-						number:'100',//查看人数
-						comment:[//评论
-							{
-								src:'http://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&f=JPEG?w=1280&h=853',//头像
-								content:'发挥巨大的数据返回东京哈吉会觉得很舒服活动教案火箭发射'//评论内容
-							},
-							{
-								src:'http://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&f=JPEG?w=1200&h=1290',//头像
-								content:'发挥巨大的数'//评论内容
-							},
-							
-						],
-						code:1120,//识别码
-					}
-				]
+				backgroundImg:'http://t7.baidu.com/it/u=3617551227,359100887&fm=79&app=86&f=JPEG?w=1280&h=1017',//背景图
+				height:0,
+				userData:{
+					
+				}
 			}
 		},
 		components: {
 			cardTwo,
 		},
+		onLoad() {
+			let that = this;
+			uni.getStorage({
+			    key: 'getSystemInfo',
+			    success: function (res) {
+					console.log(res);
+			        that.height = res.data.screenHeight;
+			    }
+			});
+		},
 		methods: {
-			
 		}
 	}
 </script>
 
 <style>
-
+	page{
+		background-color: #ececec;
+	}
+	.imageBackgroud{
+		position: fixed;
+		top: 0;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+	}
+	.scroll_view{
+		position: fixed;
+		top: 0;
+		z-index: 11;
+	}
+	.user_data{
+		margin-top: 600rpx;
+		background-color: #FFFFFF;
+	}
 </style>
