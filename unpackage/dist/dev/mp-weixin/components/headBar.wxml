@@ -1,1 +1,0 @@
-<view><view class="titleBar"></view><view class="title"><view class="back"></view><view class="titleContent">{{''+name+''}}</view></view></view>

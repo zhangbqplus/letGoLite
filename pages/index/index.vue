@@ -8,9 +8,8 @@
 </template>
 
 <script>
-	import api from "../../public/httpd.js";
-	import headBar from "../../components/headBar.vue";
-	import cardOne from "../../components/card_1.vue";
+	import headBar from "../../components/components/headBar.vue";
+	import cardOne from "../../components/components/index_card_content.vue";
 	export default {
 		components: {
 			cardOne,
@@ -47,12 +46,12 @@
 			}
 		},
 		onLoad() {
-			api.logon({
-				token: 1,
-				fhahf: 111
-			}).then(res => {
-				console.log(res);
-			});
+			// api.logon({
+			// 	token: 1,
+			// 	fhahf: 111
+			// }).then(res => {
+			// 	console.log(res);
+			// });
 		},
 		methods: {
 

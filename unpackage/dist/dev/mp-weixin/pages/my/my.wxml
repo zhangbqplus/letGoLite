@@ -1,1 +1,0 @@
-<view><view class="imageBackgroud"><image style="{{('width: 100%; height:'+height+'px;')}}" src="{{backgroundImg}}" mode="aspectFill"></image></view><scroll-view class="scroll_view" style="{{('height:'+height+'px;')}}" scroll-y="true"><view class="user_data">11111111</view></scroll-view></view>

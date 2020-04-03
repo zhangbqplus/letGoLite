@@ -13,9 +13,8 @@
 </template>
 
 <script>
-	import api from "../../public/httpd.js";
-	import cardTwo from "../../components/card_2.vue";
-	import util from "../../public/util.js";
+	import headBar from "../../components/components/headBar.vue";
+	import cardOne from "../../components/components/index_card_content.vue";
 	export default {
 		data() {
 			return {

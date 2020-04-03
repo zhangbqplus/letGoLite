@@ -1,1 +1,0 @@
-<view class="page_index"><view class="content"><card-one vue-id="1" dataList="{{getData}}" bind:__l="__l"></card-one><card-one vue-id="2" dataList="{{dataList}}" bind:__l="__l"></card-one></view></view>

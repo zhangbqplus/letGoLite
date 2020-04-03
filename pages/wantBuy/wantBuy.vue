@@ -8,8 +8,7 @@
 </template>
 
 <script>
-	import api from "../../public/httpd.js";
-	import cardTwo from "../../components/card_2.vue";
+	import cardTwo from "../../components/components/wantBuy_card_content.vue";
 	export default {
 		data() {
 			return {

@@ -1,9 +1,0 @@
-
-.titleBar{
-	height:25px;
-}
-.title{
-	height: 140rpx;
-	background-color: #333333;
-}
-

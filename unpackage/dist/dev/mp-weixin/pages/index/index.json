@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "市场",
-  "enablePullDownRefresh": true,
-  "backgroundColor": "#C8C7CC",
-  "usingComponents": {
-    "card-one": "/components/card_1",
-    "head-bar": "/components/headBar"
-  }
-}
