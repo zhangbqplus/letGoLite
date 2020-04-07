@@ -2,11 +2,11 @@ var setReqData = {}; //每个请求里可以单独设置setReqData内容，同se
 // 为了方便管理，我们可以把所有的请求路径都放在这里
 // 请求公共常量      官方地址： https://uniapp.dcloud.io/api/request/request?id=request
 const setPublicReq = {
-	url_pro: "http://47.104.29.54:8080/", //请求前缀
-	data: undefined, // 公共data, 每次发起请求时，该参数都会加入其中，重复设置以设置为准
+	url_pro: config.URLPRO, //请求前缀
+	data: config.URLDATA, // 公共data, 每次发起请求时，该参数都会加入其中，重复设置以设置为准
 	header: undefined, // 设置请求的 header  默认为系统默认
 	method: "GET", // 请求方法，具体请参考官网
-	timeout: 30000, // 超时时间，单位 ms
+	timeout: config.URLTIMEOUT, // 超时时间，单位 ms
 	dataType: "json", // 如果设为 json，会尝试对返回的数据做一次 JSON.parse
 	responseType: "text" //设置响应的数据类型。合法值：text、arraybuffer
 }
@@ -49,6 +49,7 @@ const downdata = function(opt) {
 
 //调用配置方法
 import reqConfig from "./reqConfig.js";
+import config from "./configure.js";
 //普通请求
 const request = function(url, data) {
 	let opt = {};

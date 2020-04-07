@@ -1,5 +1,5 @@
 {
-    "name" : "myAppUniapp",
+    "name" : "Let Go Lite",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -57,7 +57,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxbff62eedfdb1ad9f",
         "setting" : {
             "urlCheck" : false
         },
@@ -72,9 +72,9 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-	"uniStatistics": {  
-	    "enable": false//全局关闭  
-	},  
+    "uniStatistics" : {
+        "enable" : false //全局关闭  
+    },
     "h5" : {
         "title" : "myAppUniapp",
         "domain" : "www.letgolite.com"

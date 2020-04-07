@@ -371,11 +371,16 @@ const getPageData = function(opt){
 	let nowPage = pages[ pages.length - opt.delta - 1];  //当前页页面实例
 	return nowPage.$vm["_data_pages_put_" + opt.name];
 }
+//静态图片路径
+const STATIC = function(url){
+	return cfg.STATIC + url;
+};
 
 
 
 
 export default {  
+	STATIC,
     navigateTo,
 	redirectTo,
 	reLaunch,

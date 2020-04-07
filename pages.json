@@ -1,61 +1,62 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-            "path" : "pages/index/index",
-            "style": {
-                    "navigationBarTitleText": "市场",//设置页面标题文字
-					"enablePullDownRefresh":true,//开启下拉刷新
-					"backgroundColor":"#C8C7CC"
-            }
-        }
-        ,{
-            "path" : "pages/my/my",
-            "style" : {
-				// "navigationBarTitleText": "我的",//设置页面标题文字
-				// "enablePullDownRefresh":true//开启下拉刷新
-				"navigationStyle":"custom"
-			}
-        }
-        ,{
-            "path" : "pages/wantBuy/wantBuy",
-            "style" : {
-				"navigationBarTitleText": "求购",//设置页面标题文字
-				"enablePullDownRefresh":true//开启下拉刷新
-				// "navigationStyle":"custom",
-				// "app-plus":{
-				// 	"titleView":false
-				// }
-			}
-        }
-    ],
+	"pages": [{
+		"path": "pages/letgolite/home/home",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/letgolite/find/find",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/letgolite/personal/personal",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/letgolite/cart/cart",
+		"style": {
+			
+		}
+	}],
 	"globalStyle": {
+		"navigationStyle":"custom",
+		"app-plus": {
+			"titleNView": false
+		},
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#f7f7f7"
 	},
-	"tabBar": {	
+	"tabBar": {
 		"color": "#999999",
 		"selectedColor": "#fc6700",
 		"borderStyle": "black",
 		"backgroundColor": "#fff",
-		"list": [
-			{
-			"pagePath": "pages/index/index",
-			"iconPath": "static/tabBar/indexG.jpg",
-			"selectedIconPath": "static/tabBar/index.jpg",
-			"text": "市场"
+		"list": [{
+				"pagePath": "pages/letgolite/home/home",
+				"iconPath": "static/tabBar/indexG.jpg",
+				"selectedIconPath": "static/tabBar/index.jpg",
+				"text": "市场"
 			},
 			{
-			"pagePath": "pages/wantBuy/wantBuy",
-			"iconPath": "static/tabBar/wantBuyG.jpg",
-			"selectedIconPath": "static/tabBar/wantBuy.jpg",
-			"text": "求购"
+				"pagePath": "pages/letgolite/find/find",
+				"iconPath": "static/tabBar/wantBuyG.jpg",
+				"selectedIconPath": "static/tabBar/wantBuy.jpg",
+				"text": "求购"
 			},
 			{
-			"pagePath": "pages/my/my",
-			"iconPath": "static/tabBar/myG.jpg",
-			"selectedIconPath": "static/tabBar/my.jpg",
-			"text": "我的"
+				"pagePath": "pages/letgolite/personal/personal",
+				"iconPath": "static/tabBar/myG.jpg",
+				"selectedIconPath": "static/tabBar/my.jpg",
+				"text": "我的"
+			},
+			{
+				"pagePath": "pages/letgolite/cart/cart",
+				"iconPath": "static/tabBar/myG.jpg",
+				"selectedIconPath": "static/tabBar/my.jpg",
+				"text": "我的"
 			}
 		]
 	}
