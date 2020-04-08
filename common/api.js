@@ -375,11 +375,20 @@ const getPageData = function(opt){
 const STATIC = function(url){
 	return cfg.STATIC + url;
 };
-
+//字符串超出一定字数后面显示省略号
+const getEllipsis = function(num,str){
+	var numStr = str.length;
+	if(numStr > parseInt(num)){
+		return str.substring(0,num) + '...';
+	}else{
+		return str;
+	}
+};
 
 
 
 export default {  
+	getEllipsis,
 	STATIC,
     navigateTo,
 	redirectTo,

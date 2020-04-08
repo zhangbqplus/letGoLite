@@ -14,4 +14,8 @@
 
 <style>
 	/*每个页面公共css */
+	.clear{
+		display: block;
+		clear: both;
+	}
 </style>
