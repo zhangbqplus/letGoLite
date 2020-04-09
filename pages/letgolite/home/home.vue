@@ -48,7 +48,7 @@
 				<view class="communityChoiceSearch">
 					<view class="itemLabBox">
 						<scroll-view class="itemLabBoxPro" scroll-x="true">
-							<view class="itemLab" v-for="(item, index) in getHttpData.villageList" :key="index" :style="item.select ? ('background-color: '+ styleData.themeColor +';color: #FFF;' ):'background-color: #ecf0f3;color: #333333;'">
+							<view class="itemLab" @click="choiceNav(index,item)" v-for="(item, index) in getHttpData.villageList" :key="index" :style="item.select ? ('background-color: '+ styleData.themeColor +';color: #FFF;' ):'background-color: #ecf0f3;color: #333333;'">
 								{{item.title}}
 							</view>
 						</scroll-view>
@@ -152,16 +152,19 @@
 		bottom: 0;
 		width: 100%;
 		height: 80rpx;
-		background-color: rgb(0,0,0,0.1);
+		background-color: rgb(0,0,0,0.4);
 		border-bottom-left-radius: 30rpx;
 		border-bottom-right-radius: 30rpx;
 		display: flex;
 	}
 	.contentBock_card_img{
-		width: 80%;
+		width: 100%;
+		height: 100%;
+		border-radius: 30rpx;
+		/* width: 80%;
 		height: 80%;
 		margin-left: 10%;
-		margin-top: 10%;
+		margin-top: 10%; */
 	}
 	.contentBock_card_title{
 		width:calc(100% - 120rpx);
@@ -563,28 +566,28 @@
 					contentData:[
 						[
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#caf29c",
 								card:'0'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffc4c6",
 								card:'1'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffe35c",
 								card:'2'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#f7a7c2",
@@ -593,28 +596,28 @@
 						],
 						[
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#caf29c",
 								card:'0'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#f7a7c2",
 								card:'1'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffc4c6",
 								card:'2'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffe35c",
@@ -623,28 +626,28 @@
 						],
 						[
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffe35c",
 								card:'0'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#caf29c",
 								card:'1'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffc4c6",
 								card:'2'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#f7a7c2",
@@ -653,28 +656,28 @@
 						],
 						[
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#caf29c",
 								card:'0'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffe35c",
 								card:'1'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#ffc4c6",
 								card:'2'
 							},
 							{
-								img_url:"../../../static/letgolite/home/search.png",
+								img_url:"../../../static/img.jpg",
 								illustrate:"这是啥这是啥这是啥这是啥这是啥这是啥",
 								price:"1000",
 								titleChange:"#f7a7c2",
@@ -695,12 +698,12 @@
 			});
 		},
 		onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
-			//更改主题颜色
-			this.styleData.themeColor = this.getHttpData.contentData[parseInt((e.scrollTop * 750)/this.styleData.windowWidth/860)][1].titleChange;
-			this.$forceUpdate();
+			// //更改主题颜色
+			// this.styleData.themeColor = this.getHttpData.contentData[parseInt((e.scrollTop * 750)/this.styleData.windowWidth/860)][1].titleChange;
+			// this.$forceUpdate();
 		},
 		methods: {
-			//标签 弹出导航栏
+			//标签 弹出历史搜索
 			getLabelNav() {
 				if (this.styleData.communityChoiceTime != 0) {
 					return;
@@ -737,6 +740,14 @@
 			searchFunction(){
 				console.log("双向绑定的数据：" + this.searchData);
 			},
+			//导航栏选择
+			choiceNav(k,item){
+				for (let i = 0; i < this.getHttpData.villageList.length; i++) {
+					this.getHttpData.villageList[i].select = false;
+				}
+				this.getHttpData.villageList[k].select = true;
+				console.log("导航的数据" + item);
+			}
 			
 		}
 	}
