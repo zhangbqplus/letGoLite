@@ -80,11 +80,31 @@
 				</view>
 				<view class="clear"></view>
 			</view>
-				
+			<view class="fixBack" v-if="fixBackShow"  @tap="goTop">
+				<image :src="STATIC( 'find/backTop.png')" mode='aspectFill'></image>
+			</view>	
 		</view>
 	</view>
 </template>
 <style>
+	.fixBack {
+		position: fixed;
+		z-index: 150;
+		width: 80rpx;
+		height: 80rpx;
+		bottom: 80rpx;
+		right: 50rpx;
+		border: 1px solid #C0C0C0;
+		background-color: #FFFFFF;
+		border-radius: 50%;
+	}
+	
+	.fixBack image {
+		width: 50rpx;
+		height: 50rpx;
+		padding: 15rpx;
+		opacity: 0.4;
+	}
 	/* 内容 */
 	.contentHome{
 		width: 90%;
@@ -479,6 +499,8 @@
 		},
 		data() {
 			return {
+				//是否出现返回顶部的按钮
+				fixBackShow: false,
 				//统一静态图片路径
 				STATIC: api.STATIC,
 				// 样式数据
@@ -490,7 +512,7 @@
 					//标题变小
 					titleChange: false,
 					//主题颜色
-					themeColor: "#caf29c",
+					themeColor: "#fc6700",
 					windowWidth:0,
 				},
 				//数据的双向绑定
@@ -701,8 +723,21 @@
 			// //更改主题颜色
 			// this.styleData.themeColor = this.getHttpData.contentData[parseInt((e.scrollTop * 750)/this.styleData.windowWidth/860)][1].titleChange;
 			// this.$forceUpdate();
+			//出行返回顶部按钮的监听
+			if(e.scrollTop > 700){
+				this.fixBackShow = true;
+			}else{
+				this.fixBackShow = false;
+			}
 		},
 		methods: {
+			//页面回到顶部
+			goTop(){
+				uni.pageScrollTo({
+				scrollTop: 0,
+				duration: 300
+				});
+			},
 			//标签 弹出历史搜索
 			getLabelNav() {
 				if (this.styleData.communityChoiceTime != 0) {

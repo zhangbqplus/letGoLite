@@ -14,11 +14,6 @@
 		"style": {
 			
 		}
-	}, {
-		"path": "pages/letgolite/cart/cart",
-		"style": {
-			
-		}
 	}],
 	"globalStyle": {
 		"navigationStyle":"custom",
@@ -38,22 +33,16 @@
 				"pagePath": "pages/letgolite/home/home",
 				"iconPath": "static/tabBar/indexG.jpg",
 				"selectedIconPath": "static/tabBar/index.jpg",
-				"text": "市场"
+				"text": "首页"
 			},
 			{
 				"pagePath": "pages/letgolite/find/find",
 				"iconPath": "static/tabBar/wantBuyG.jpg",
 				"selectedIconPath": "static/tabBar/wantBuy.jpg",
-				"text": "求购"
+				"text": "发现"
 			},
 			{
 				"pagePath": "pages/letgolite/personal/personal",
-				"iconPath": "static/tabBar/myG.jpg",
-				"selectedIconPath": "static/tabBar/my.jpg",
-				"text": "我的"
-			},
-			{
-				"pagePath": "pages/letgolite/cart/cart",
 				"iconPath": "static/tabBar/myG.jpg",
 				"selectedIconPath": "static/tabBar/my.jpg",
 				"text": "我的"

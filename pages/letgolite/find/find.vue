@@ -81,8 +81,8 @@
 								<view class="content_bottom_item_right_price">
 									￥ {{item.price}}
 								</view>
-								<view class="content_bottom_item_right_buy_pro">
-									<view class="content_bottom_item_right_buy" :style="'background-color: '+ styleData.themeColor +';'">
+								<view class="content_bottom_item_right_buy_pro" @click="putCart(index)">
+									<view :class="item.select ? '.content_bottom_item_right_buy_opacity' : '.content_bottom_item_right_buy'" :style="'background-color: '+ styleData.themeColor +';'">
 										<image :src="STATIC( 'find/buyW.png')" mode='aspectFill'></image>
 									</view>
 								</view>
@@ -98,10 +98,13 @@
 			<view class="fixBack" v-if="fixBackShow" @tap="goTop">
 				<image :src="STATIC( 'find/backTop.png')" mode='aspectFill'></image>
 			</view>
-			<view class="fixBuyNum" v-if="fixBuyNum != 0" :style="'color:' + styleData.themeColor + '; border: 1px solid ' + styleData.themeColor + ';'">
-				{{fixBuyNum}}
+			<!-- <view class="fixBuyNum" v-if="getHttpData.cartData.length != 0" :style="'color:' + styleData.themeColor + '; border: 1px solid ' + styleData.themeColor + ';'">
+				{{getHttpData.cartData.length}}
+			</view> -->
+			<view class="fixBuyNum" v-if="getHttpData.cartData.length != 0" :style="'color:#fff; background-color: ' + styleData.themeColor + ';'">
+				{{getHttpData.cartData.length}}
 			</view>
-			<view class="fixBuy" v-if="fixBuyNum != 0">
+			<view class="fixBuy" v-if="getHttpData.cartData.length != 0">
 				<image :src="STATIC( 'find/buyB.png')" mode='aspectFill'></image>
 			</view>
 		</view>
@@ -115,20 +118,18 @@
 		height: 30rpx;
 		bottom: 490rpx;
 		right: 66rpx;
-		border: 1px solid #007AFF;
 		border-radius: 50%;
 		font-size: 20rpx;
 		line-height: 30rpx;
 		text-align: center;
-		color: #007AFF;
 	}
 
 	.fixBack {
-		position: absolute;
+		position: fixed;
 		z-index: 150;
 		width: 80rpx;
 		height: 80rpx;
-		bottom: 350rpx;
+		bottom: 80rpx;
 		right: 50rpx;
 		border: 1px solid #C0C0C0;
 		background-color: #FFFFFF;
@@ -161,67 +162,7 @@
 		opacity: 0.6;
 	}
 
-	.content_bottom_item_right_buy_pro {
-		width: 150rpx;
-		height: 150rpx;
-	}
-
-	.content_bottom_item_right_buy {
-		width: 60rpx;
-		height: 60rpx;
-		border-radius: 50%;
-	}
-
-	.content_bottom_item_right_buy image {
-		width: 30rpx;
-		height: 30rpx;
-		padding: 15rpx;
-		border-radius: 50%;
-	}
-
-	.content_bottom_con_box {
-		height: 100%;
-		width: 100%;
-	}
-
-	.content_bottom_item {
-		margin-top: 30rpx;
-	}
-
-	.content_bottom_item_left {
-		width: 280rpx;
-		height: 364rpx;
-		border-radius: 30rpx;
-		float: left;
-	}
-
-	.content_bottom_item_right {
-		width: 350rpx;
-		height: 364rpx;
-		overflow: hidden;
-		float: right;
-	}
-
-	.content_bottom_item_right_title {
-		font-size: 32rpx;
-		line-height: 50rpx;
-		font-weight: bold;
-		color: #333333;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		height: 80rpx;
-		padding-top: 30rpx;
-	}
-
-	.content_bottom_item_right_price {
-		height: 60rpx;
-		font-size: 32rpx;
-		color: #333333;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
+	
 
 	/* 内容 */
 	.content {
@@ -335,7 +276,7 @@
 
 	.content_top_title_En {
 		position: absolute;
-		top: 26rpx;
+		top: 22rpx;
 		left: 80rpx;
 		font-size: 16rpx;
 		float: left;
@@ -567,6 +508,73 @@
 		height: calc(100% - 260rpx);
 		margin-top: 30rpx;
 	}
+	.content_bottom_item_right_buy_pro {
+		width: 150rpx;
+		height: 150rpx;
+	}
+	
+	.content_bottom_item_right_buy {
+		width: 60rpx;
+		height: 60rpx;
+		border-radius: 50%;
+	}
+	.content_bottom_item_right_buy_opacity {
+		width: 60rpx;
+		height: 60rpx;
+		opacity: 0.4;
+		border-radius: 50%;
+	}
+	
+	.content_bottom_item_right_buy image,.content_bottom_item_right_buy_opacity image {
+		width: 30rpx;
+		height: 30rpx;
+		padding: 15rpx;
+		border-radius: 50%;
+	}
+	
+	.content_bottom_con_box {
+		height: 100%;
+		width: 100%;
+	}
+	
+	.content_bottom_item {
+		margin-top: 30rpx;
+	}
+	
+	.content_bottom_item_left {
+		width: 280rpx;
+		height: 364rpx;
+		border-radius: 30rpx;
+		float: left;
+	}
+	
+	.content_bottom_item_right {
+		width: 350rpx;
+		height: 364rpx;
+		overflow: hidden;
+		float: right;
+	}
+	
+	.content_bottom_item_right_title {
+		font-size: 32rpx;
+		line-height: 50rpx;
+		font-weight: bold;
+		color: #333333;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		height: 80rpx;
+		padding-top: 30rpx;
+	}
+	
+	.content_bottom_item_right_price {
+		height: 60rpx;
+		font-size: 32rpx;
+		color: #333333;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 </style>
 <script>
 	import api from "common/api.js";
@@ -581,8 +589,6 @@
 						scrollTop: 0
 					}
 				},
-				//购物车内商品种类
-				fixBuyNum: 0,
 				//是否出现返回顶部的按钮
 				fixBackShow: false,
 				//超出某个字符是后面加...
@@ -593,13 +599,15 @@
 				contentTopSwiper: '',
 				//主题内容
 				themeContent: 0, //0 为上部内容为主，1 为下部内容为主
+				themeContentFixBackShow:false,//暂存fixBackShow数据
 				//控制样式的数据
 				styleData: {
 					windowHeight: 0,
 					//主题颜色
-					themeColor: "#caf29c",
+					themeColor: "#fc6700",
 				},
 				getHttpData: {
+					//轮播公告
 					contentTopSwiper: [{
 							text: '你好，我就想看看是啥效果，感觉怎么样啊，大概能撑的下150个字吧',
 							attribute: ''
@@ -763,57 +771,68 @@
 							select: false
 						},
 					],
+					//商品信息
 					goodsData: [{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈好的哈哈哈哈哈好的哈哈哈哈哈好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
 						{
 							imgUrl: '../../../static/img.jpg',
 							title: '好的哈哈哈哈哈',
 							price: 100,
 							id: '1111',
+							select:false //是否被选中
 						},
-
+					],
+					//购物车收藏商品信息
+					cartData:[
 					]
-
+					
 				}
 			}
 		},
@@ -830,10 +849,13 @@
 			//更换主题 为主题1
 			themeContentFun1() {
 				this.themeContent = 1;
+				this.themeContentFixBackShow = this.fixBackShow;
+				this.fixBackShow = false;
 			},
 			//更换主题 为主题0
 			themeContentFun0() {
 				this.themeContent = 0;
+				this.fixBackShow = this.themeContentFixBackShow;
 			},
 			//选择导航
 			choiceNav(k,item) {
@@ -852,17 +874,33 @@
 					this.fixBackShow = false;
 				}
 			},
+			//添加购物车
+			putCart(k){
+				let havaThisGoods = false;
+				if(this.getHttpData.goodsData[k].select){
+					//cartData中删删除数据
+					this.getHttpData.cartData = api.arrRemoves(this.getHttpData.cartData,this.getHttpData.goodsData[k]);
+					this.getHttpData.goodsData[k].select = false; //更改为未被选中的效果
+				}else{
+					this.getHttpData.goodsData[k].select = true;
+					this.getHttpData.cartData.push(this.getHttpData.goodsData[k]);
+					for (var i = 0; i < this.fixBuyGoods.length; i++) {
+						if(this.fixBuyGoods[i] == this.getHttpData.goodsData[k]){
+							havaThisGoods = true;
+						}
+					}
+					if(!havaThisGoods){
+						this.fixBuyGoods.push(this.getHttpData.goodsData[k]);
+					}
+				}
+			},
 			//商品列表 返回顶部
 			goTop(e) {
 				// this.goodsScrollView.scrollTop = e.detail.scrollTop; //这个必须加
 				this.goodsScrollView.scrollTop = this.goodsScrollView.old.scrollTop; //这个必须加
 				this.$nextTick(function() {
 					this.goodsScrollView.scrollTop = 0;
-					this.fixBackShow = false;
 				});
-			},
-			logFun() {
-				console.log(this.styleData.windowHeight)
 			}
 		}
 	}
