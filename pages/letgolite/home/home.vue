@@ -10,7 +10,7 @@
 					<view class="searchImgBox" @click="searchFunction()">
 						<image class="searchImg" :src="STATIC('home/search.png')" mode='aspectFill'></image>
 					</view>
-					<input class="searchBoxInput" confirm-type = "search" v-model="searchData" placeholder="请输入搜索内容" />
+					<input class="searchBoxInput" @confirm="searchFunction()" confirm-type = "search" v-model="searchData" placeholder="请输入搜索内容" />
 				</view>
 				<view class="searchIcon" @click="getLabelNav()" :style="'background-color: '+ styleData.themeColor +';'">
 					<image class="searchIconImg" :src="this.STATIC(styleData.communityChoiceRightLeft ? 'home/retract.png' : 'home/open.png')"
@@ -37,8 +37,10 @@
 					<view class="communityChoiceNavContent">
 						<scroll-view class="communityChoiceNavContentPro" scroll-x="true">
 							<view class="itemLabHaveClose" v-for="(item, index) in getHttpData.caches" :key="index">
-								{{item.title}}
-								<image v-if="item.isDelete" class="itemLabHaveCloseDelete" :src="STATIC('home/delete.png')" mode='aspectFill'></image>
+								<view class="itemLabHaveCloseDeleteTitle" @click="choiceCaches(item)">
+									{{item.title}}
+								</view>
+								<image v-if="item.isDelete" class="itemLabHaveCloseDelete" @click="delCaches(item)" :src="STATIC('home/delete.png')" mode='aspectFill'></image>
 								<view v-if="!item.isDelete" class="itemLabHaveCloseDeleteBox">
 								</view>
 							</view>
@@ -66,6 +68,7 @@
 				<view :class="'contentBock_card' + item_child.card"
 					v-if="(i%4) == item_child.card"
 					v-for="(item_child, i) in item" :key="i"
+					@click="clickItem(item_child)"
 					:style="'background-color:' + item_child.titleChange + ';'"
 					>
 					<image class="contentBock_card_img" :src="item_child.img_url" mode='aspectFill'></image>
@@ -480,6 +483,9 @@
 		opacity: 0;
 		display: inline-block;
 	}
+	.itemLabHaveCloseDeleteTitle{
+		display: inline-block;
+	}
 
 	.communityChoiceSearch {
 		position: absolute;
@@ -773,6 +779,7 @@
 			},
 			//搜索
 			searchFunction(){
+				this.putCaches(this.searchData);
 				console.log("双向绑定的数据：" + this.searchData);
 			},
 			//导航栏选择
@@ -781,7 +788,32 @@
 					this.getHttpData.villageList[i].select = false;
 				}
 				this.getHttpData.villageList[k].select = true;
-				console.log("导航的数据" + item);
+				console.log("导航的数据" + JSON.stringify(item));
+			},
+			//选中搜索缓存
+			choiceCaches(item){
+				console.log("选中缓存数据" + JSON.stringify(item));
+			},
+			//删除搜索缓存
+			delCaches(item){
+				this.getHttpData.caches = api.arrRemoves(this.getHttpData.caches,item);
+			},
+			//存入缓存
+			putCaches(item){
+				if(!item){
+					return;
+				}
+				let ite = {
+					title:item,
+					isDelete:true
+				}
+				if(api.arrFind(this.getHttpData.caches,ite) == 0){
+					this.getHttpData.caches.push(ite);
+				}
+			},
+			//点击产品
+			clickItem(item){
+				console.log("我是商品信息"+ JSON.stringify(item));
 			}
 			
 		}

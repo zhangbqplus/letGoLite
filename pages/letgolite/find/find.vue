@@ -13,7 +13,7 @@
 				<view class="content_top_swiper" v-if="themeContent == 0">
 					<swiper class="content_top_swiper_box" :indicator-dots="false" :autoplay="true" :interval="5000" :duration="1000"
 					 :vertical="true" :circular="true">
-						<swiper-item class="content_top_swiper_swiper" v-for="(item, index) in getHttpData.contentTopSwiper" :key="index">
+						<swiper-item class="content_top_swiper_swiper" @click="clickFind(item)" v-for="(item, index) in getHttpData.contentTopSwiper" :key="index">
 							<view class="content_top_swiper_swiper-item">
 								<image class="content_top_swiper_swiper-item-img" :src="STATIC( 'find/triangle.png')" mode='aspectFill'></image>
 								{{getEllipsis(30,item.text)}}
@@ -23,7 +23,7 @@
 				</view>
 				<view class="content_top_scroll" v-if="themeContent == 1">
 					<scroll-view class="content_top_scroll_box" scroll-y="true">
-						<view class="content_top_scroll_item" v-for="(item, index) in getHttpData.contentTopSwiper" :key="index">
+						<view class="content_top_scroll_item" @click="clickFind(item)" v-for="(item, index) in getHttpData.contentTopSwiper" :key="index">
 							<image class="content_top_swiper_swiper-item-img" :src="STATIC( 'find/triangle.png')" mode='aspectFill'></image>
 							{{item.text}}
 						</view>
@@ -73,12 +73,12 @@
 				<view class="content_bottom_con">
 					<scroll-view class="content_bottom_con_box" scroll-y="true" @scroll="upper" scroll-with-animation=true :scroll-top="goodsScrollView.scrollTop">
 						<view class="content_bottom_item" v-for="(item, index) in getHttpData.goodsData" :key="index">
-							<image class="content_bottom_item_left" :src="item.imgUrl" mode='aspectFill'></image>
+							<image class="content_bottom_item_left" @click="clickItem(item)" :src="item.imgUrl" mode='aspectFill'></image>
 							<view class="content_bottom_item_right">
-								<view class="content_bottom_item_right_title">
+								<view class="content_bottom_item_right_title" @click="clickItem(item)" >
 									{{item.title}}
 								</view>
-								<view class="content_bottom_item_right_price">
+								<view class="content_bottom_item_right_price" @click="clickItem(item)">
 									￥ {{item.price}}
 								</view>
 								<view class="content_bottom_item_right_buy_pro" @click="putCart(index)">
@@ -101,10 +101,10 @@
 			<!-- <view class="fixBuyNum" v-if="getHttpData.cartData.length != 0" :style="'color:' + styleData.themeColor + '; border: 1px solid ' + styleData.themeColor + ';'">
 				{{getHttpData.cartData.length}}
 			</view> -->
-			<view class="fixBuyNum" v-if="getHttpData.cartData.length != 0" :style="'color:#fff; background-color: ' + styleData.themeColor + ';'">
+			<view class="fixBuyNum" @click="clickCart()" v-if="getHttpData.cartData.length != 0" :style="'color:#fff; background-color: ' + styleData.themeColor + ';'">
 				{{getHttpData.cartData.length}}
 			</view>
-			<view class="fixBuy" v-if="getHttpData.cartData.length != 0">
+			<view class="fixBuy" @click="clickCart()" v-if="getHttpData.cartData.length != 0">
 				<image :src="STATIC( 'find/buyB.png')" mode='aspectFill'></image>
 			</view>
 		</view>
@@ -116,8 +116,8 @@
 		z-index: 151;
 		width: 30rpx;
 		height: 30rpx;
-		bottom: 490rpx;
-		right: 66rpx;
+		bottom: 510rpx;
+		right: 56rpx;
 		border-radius: 50%;
 		font-size: 20rpx;
 		line-height: 30rpx;
@@ -884,15 +884,19 @@
 				}else{
 					this.getHttpData.goodsData[k].select = true;
 					this.getHttpData.cartData.push(this.getHttpData.goodsData[k]);
-					for (var i = 0; i < this.fixBuyGoods.length; i++) {
-						if(this.fixBuyGoods[i] == this.getHttpData.goodsData[k]){
-							havaThisGoods = true;
-						}
-					}
-					if(!havaThisGoods){
-						this.fixBuyGoods.push(this.getHttpData.goodsData[k]);
-					}
 				}
+			},
+			//点击购物车
+			clickCart(){
+				console.log("我是购物车内的信息"+ JSON.stringify(this.getHttpData.cartData));
+			},
+			//点击产品
+			clickItem(item){
+				console.log("我是商品信息"+ JSON.stringify(item));
+			},
+			//点击广播信息
+			clickFind(item){
+				console.log("我是点击广播的信息"+ JSON.stringify(item));
 			},
 			//商品列表 返回顶部
 			goTop(e) {

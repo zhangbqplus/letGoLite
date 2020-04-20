@@ -464,10 +464,26 @@ const arrFilter = function(data, factor) {
 	}
 	return data.filter(factor);
 };
+//查看数组中是否有该元素,返回1时代表数组中有该元素，返回0时表示数组中未发现该元素
+/**
+ * @param {Object} arr 数组
+ * @param {Object} data 数组元素
+ */
+const arrFind = function(arr,data){
+	var code = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if(arr[i] == data){
+			code = 1;
+			return code;
+		}
+	}
+	return code;
+};
 
 
 
 export default {
+	arrFind,
 	arrFilter,
 	arrRemoves,
 	arrRemove,

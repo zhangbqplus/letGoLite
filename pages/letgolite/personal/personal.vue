@@ -10,10 +10,10 @@
 				</view>
 			</view>
 			<view class="content_title">
-				<view class="content_title_content">
+				<view class="content_title_content" @click="nickname()">
 					{{personalData.title}}
 				</view>
-				<image :src="personalData.imageSrc" mode='aspectFill'></image>
+				<image @click="chooseImage()" :src="personalData.imageSrc" mode='aspectFill'></image>
 			</view>
 		</view>
 		<view class="content">
@@ -28,7 +28,7 @@
 					  (styleData.cardGradual[0] == index & styleData.cardGradual[1] == i) ? 
 					  '#c0c0c0' : '#ffffff'
 					  )+';'"
-				 @touchstart="cardTouchstart(index,i)" @touchend="cardTouchend(item)" v-for="(it, i) in item.item" :key="i">
+				 @touchstart="cardTouchstart(index,i)" @touchend="cardTouchend(it)" v-for="(it, i) in item.item" :key="i">
 					<image class="content_content_item_icon" :src="it.iconSrc"></image>
 					<view class="content_content_item_title">
 						{{it.title}}
@@ -202,7 +202,7 @@
 				},
 				//头像数据
 				personalData: {
-					imageSrc: '../../../static/img.jpg',
+					imageSrc: 'http://47.104.29.54:800/img/title.jpg',
 					title: '我是名称名称啊名称啊名称名称啊名称',
 					id: '' //其他属性
 				},
@@ -339,7 +339,18 @@
 				this.styleData.cardGradual[0] = -1;
 				this.styleData.cardGradual[1] = -1;
 				this.$forceUpdate();
-				console.log("我是卡片被点击的全部数据" + e);
+				console.log("我是卡片被点击的全部数据" + JSON.stringify(e));
+			},
+			//昵称被点击
+			nickname(){
+				
+			},
+			//头像预览
+			chooseImage(){
+				 uni.previewImage({
+				        current: this.personalData.imageSrc,
+				        urls: [this.personalData.imageSrc]
+				    });
 			}
 		}
 	}
